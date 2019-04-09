@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>checkbox</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+	<style type="text/css" media="screen">
+		body{
+	background: #23074d;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #cc5333, #23074d);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #cc5333, #23074d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	font-family: 'Roboto', sans-serif;
+}
+h1{
+	background-color: #cc5333;
+	color: white;
+	margin: 0;
+	text-transform: uppercase;
+	padding: 10px 10px;
+	font-size: 24px;
+	font-weight:normal;
+}
+ul{ list-style: none;
+	margin: 0;
+	padding: 0;
+	font-family:sans-serif;
+}
+li{
+	background-color: #fff;
+	height: 40px;
+	line-height: 40px;
+	color: #666;
+}
+
+#hell{
+	font-size: 18px;
+	background-color: #f7f7f7;
+	width: 100%;
+	padding: 13px 13px 13px 20px;
+	box-sizing: border-box;
+	color: #2980b9;
+	border:3px solid rgba(0,0,0,0);
+}
+#hells:focus{
+	background-color: #fff;
+	border: 3px solid #2980b9;
+	outline: none;
+	}
+li:active span{
+	width: 38px;
+	opacity: 1;
+	box-sizing: border-box;
+	border:3px solid rgba(0,0,0,0);
+}
+#checkbox{
+	margin: 10% 35%;
+}
+.fa-trash{
+	float: right;
+}
+.fa-trash:active{
+	color: 	rgb(200, 233, 233);
+}
+.fa-plus{
+	margin-left: 50%;
+
+}
+.fa-plus:active{
+	color: 	rgb(200, 233, 233);
+}
+
+.item{
+
+    background:#f7f7f7;
+    box-shadow: 0 0 3px rgba(128,128,128,1);
+
+}
+span{
+	background-color: #2980b9;
+	height: 40px;
+	margin-right: 20px;
+	text-align: center;
+	color: rgba(255,255,255,0.8);
+	width: 35px;
+	display: inline-block;
+	box-sizing: content-box;
+	opacity: 1;
+}
+.i{
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+	</style>
+	<div id="checkbox">
+	<h1>To-Do List<i class="fas fa-plus"></i><i class="fa fa-trash"></i></h1>
+	<input type="text" placeholder="Add New To-Do" id="hell">
+	<ul>
+		<div class="item" >
+          <ul>
+           <li><span><input type="checkbox" class="i"></span>this is an inbox layout</li>
+       </ul>
+		</div>
+		<div class="item">
+          <ul>
+           <li><span><input type="checkbox" class="i"></span>this is an inbox layout</li>
+       </ul>
+		</div>
+		<div class="item">
+          <ul>
+           <li><span><input type="checkbox" class="i"></span>this is an inbox layout</li>
+       </ul>
+		</div>
+		<div class="item">
+          <ul>
+           <li><span><input type="checkbox" class="i"></span>this is an inbox layout</li>
+       </ul>
+		</div>
+		<div class="item">
+          <ul>
+           <li><span><input type="checkbox" class="i"></span>this is an inbox layout</li>
+       </ul>
+		</div>
+	</div>
+<script>
+	var sum=document.querySelector(".fa-plus");
+	 var x=document.querySelector("input[type='text'");
+	 var del=document.querySelector(".fa-trash");
+	 var check=document.querySelector("input[type='checkbox'");
+	 var div=document.querySelector("li");
+	 var ul=document.querySelector("ul");
+	sum.addEventListener("click",function(){
+      if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+})
+
+	del.addEventListener("click",function(){
+		if(document.querySelector("input[type='checkbox'").checked === true){
+			div.style.display="none";
+			div.stopPropagation();
+		}
+		else{
+			div.style.display="block";
+		}
+
+	})
+  x.addEventListener("change",function(){
+  	var todoText=x.val
+ if(x.value!=""){
+	ul.innerHtml="<li><span><input type="checkbox" class="i"></span>"+ todoText+"</li>";
+}
+});
+
+
+	
+	
+
+</script>
+</body>
+</html>
